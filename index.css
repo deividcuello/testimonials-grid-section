@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+/*GENERAL STYLES*/
+:root{
+    /*PRIMARY*/
+    --ModerateViolet: hsl(263, 55%, 52%);
+    --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --VeryDarkBlackishBlue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    /*NEURAL*/
+    --LightGray: hsl(0, 0%, 81%);
+    --LightGrayishBlue: hsl(210, 46%, 95%);
+    /*FONT*/
+    --FontFamily: 'Barlow Semi Condensed', sans-serif;
+    --FontSize: 13px;
+}
+
+*, ::after, ::before{
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+}
+
+body{
+    font-family: var(--FontFamily);
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    height: 100vh;
+    padding: 13px;
+    background-color: var(--LightGrayishBlue);
+    max-width: 1440px;
+    margin: auto;
+}
+
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*TESTIMONALS*/
+.testimonials-container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+}
+
+.testimonials-container article{
+    padding: 35px;
+    border-radius: 10px;
+}
+
+.testimonials-container .user{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.testimonials-container .user span{
+    display: block;
+}
+
+.testimonials-container .user img{
+    width: 50px;
+    border-radius: 50%;
+    border: 1.9px solid var(--White);
+}
+
+.testimonials-container .content .title{
+    color: var(--White);
+    font-size: 24.7px;
+    font-weight: 600;
+}
+
+.testimonials-container .user .info .verified{
+    color: var(--LightGray);
+}
+
+.testimonials-container .user .name{
+    color: var(--White);
+    font-size: 18px;
+}
+
+.testimonials-container .testimonial{
+    font-weight: 500;
+}
+
+.testimonials-container .item:nth-child(3) .user .name,
+.testimonials-container .item:nth-child(5) .user .name{
+    color: var(--VeryDarkBlackishBlue);
+}
+
+.testimonials-container .item:nth-child(1){
+    position: relative;
+    background-color: var(--ModerateViolet);
+    grid-column: 1/7;
+    z-index: 1;
+}
+
+.testimonials-container .item:nth-child(1)::after{
+    content: "";
+    position: absolute;
+    width: 148px;
+    height: 148px;
+    background-image: url("./images/bg-pattern-quotation.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--LightGray);
+    top: 0;
+    right: 92px;
+    z-index: -1;
+    opacity: .8;
+}
+
+.testimonials-container .item:nth-child(1) .title{
+    color: var(--White);
+    z-index: 10;
+}
+
+.testimonials-container .item:nth-child(1) .testimonial{
+    color: var(--LightGrayishBlue);
+}
+
+.testimonials-container .item:nth-child(2){
+    background-color: var(--VeryDarkGrayishBlue);
+    grid-column: 7/10;
+}
+
+.testimonials-container .item:nth-child(2) .title{
+    color: var(--LightGrayishBlue);
+}
+
+.testimonials-container .item:nth-child(2) .testimonial{
+    color: var(--LightGray);
+}
+
+.testimonials-container .item:nth-child(3){
+    background-color: var(--White);
+    grid-column: 1/4;
+}
+
+.testimonials-container .item:nth-child(3) .title{
+    color: var(--VeryDarkBlackishBlue);
+}
+
+.testimonials-container .item:nth-child(3) .testimonial{
+    color: var(--VeryDarkGrayishBlue);
+}
+
+.testimonials-container .item:nth-child(4){
+    background-color: var(--VeryDarkBlackishBlue);
+    grid-column: 4/10;
+}
+
+.testimonials-container .item:nth-child(4) .title{
+    color: var(--LightGrayishBlue);
+}
+
+.testimonials-container .item:nth-child(4) .testimonial{
+    color: var(--LightGrayishBlue);
+}
+
+.testimonials-container .item:nth-child(5){
+    background-color: var(--White);
+    grid-column: 10/13;
+    grid-row: 1/3;
+}
+
+.testimonials-container .item:nth-child(5) .title{
+    color: var(--VeryDarkBlackishBlue);
+}
+
+.testimonials-container .item:nth-child(5) .testimonial{
+    color: var(--VeryDarkGrayishBlue);
+}
+
+/*MEDIA QUERIES*/
+@media only screen and (max-width: 768px) {
+    .testimonials-container .item {
+      grid-column: 1/13 !important;
+    }
+
+    .testimonials-container .item:nth-child(5){
+        grid-row: 5;
+    }
+  }
