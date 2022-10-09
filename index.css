@@ -15,7 +15,7 @@
     --FontSize: 13px;
 }
 
-*, ::after, ::before{
+*, *::after, *::before{
     box-sizing: border-box;
     border: 0;
     outline: 0;
